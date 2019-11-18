@@ -16,12 +16,12 @@ public class Customer {
     private String customerSurname;
     private String customerEmail;
     private String customerAddress;
-    private String customerPhone;
+    private int customerPhone;
 
     public Customer() {
     }
 
-    public Customer(String customerName, String customerSurname, String customerEmail, String customerAddress, String customerPhone) {
+    public Customer(String customerName, String customerSurname, String customerEmail, String customerAddress, int customerPhone) {
         this.customerName = customerName;
         this.customerSurname = customerSurname;
         this.customerEmail = customerEmail;
@@ -69,11 +69,11 @@ public class Customer {
         this.customerAddress = customerAddress;
     }
 
-    public String getCustomerPhone() {
+    public int getCustomerPhone() {
         return customerPhone;
     }
 
-    public void setCustomerPhone(String customerPhone) {
+    public void setCustomerPhone(int customerPhone) {
         this.customerPhone = customerPhone;
     }
 }

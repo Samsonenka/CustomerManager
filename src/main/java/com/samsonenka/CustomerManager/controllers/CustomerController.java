@@ -5,28 +5,21 @@ import com.samsonenka.CustomerManager.repos.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
 @Controller
-public class MainController {
+public class CustomerController {
 
     @Autowired
     private CustomerRepo customerRepo;
 
-    @GetMapping("/")
-    public String index(ModelMap model){
+    @PostMapping("/postNewCustomer")
+    public String postNewCustomer(Customer customer){
 
-        List<Customer> customerList = customerRepo.findAll();
+        customerRepo.save(customer);
 
-        model.put("customerList", customerList);
-        return "index";
-    }
-
-    @GetMapping("/newCustomer")
-    public String newCustomer(){
-
-        return "newCustomerForm";
+        return "redirect:/";
     }
 }

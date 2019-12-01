@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -27,6 +29,20 @@ public class Customer {
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
+    }
+
+    public static List<Customer> findCustomerByFullName(List<Customer> all, String name) {
+
+        String customerFullName;
+        List<Customer> customerList = new ArrayList<>();
+
+        for (Customer customer: all){
+            customerFullName = customer.customerName + " " + customer.customerSurname;
+            if (customerFullName.equals(name)){
+                customerList.add(customer);
+            }
+        }
+        return customerList;
     }
 
     public int getCustomerID() {

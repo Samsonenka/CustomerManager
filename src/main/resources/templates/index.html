@@ -4,11 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Customer Manager</title>
+    <style>
+    div{
+         padding-top: 10px;
+     }
+    </style>
 </head>
 <body>
 
     <div align="center">
         <a th:href="@{/newCustomer}">New Customer</a>
+    </div>
+
+    <div align="center">
+        <form th:action="@{/findCustomer}" method="get">
+            <input type="text" name="name" placeholder="Enter name and surname">
+            <input type="submit" value="Find">
+        </form>
     </div>
 
     <div align="center">

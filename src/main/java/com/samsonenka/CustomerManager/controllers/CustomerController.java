@@ -23,6 +23,15 @@ public class CustomerController {
         return "redirect:/";
     }
 
+    @GetMapping("/deleteCustomer/{customerID}")
+    public String editCustomer(@PathVariable int customerID){
+
+        Customer customer = customerRepo.findById(customerID).get();
+        customerRepo.delete(customer);
+
+        return "redirect:/";
+    }
+
     @GetMapping("/findCustomer")
     public String findCustomer(@RequestParam String name, ModelMap modelMap){
 

@@ -39,6 +39,10 @@
                 <th th:text = "${Customer.customerEmail}"></th>
                 <th th:text = "${Customer.customerAddress}"></th>
                 <th th:text = "${Customer.customerPhone}"></th>
+                <th>
+                   <a th:href="@{'/deleteCustomer/' + ${Customer.customerID}}">Delete</a>
+                   <a th:href="@{'/editCustomer/' + ${Customer.customerID}}">Edit</a>
+                </th>
             </tr>
         </table>
     </div>

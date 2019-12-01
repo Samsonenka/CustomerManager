@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,5 +29,15 @@ public class MainController {
     public String newCustomer(){
 
         return "newCustomerForm";
+    }
+
+    @GetMapping("/editCustomer/{customerID}")
+    public String editCustomer(@PathVariable int customerID, ModelMap modelMap){
+
+        Customer customer = customerRepo.findById(customerID).get();
+
+        modelMap.put("customer", customer);
+
+        return "editCustomerForm";
     }
 }

@@ -32,6 +32,22 @@ public class CustomerController {
         return "redirect:/";
     }
 
+    @PostMapping("/updateCustomer/{customerID}")
+    public String updateCustomer(@PathVariable int customerID, Customer customer){
+
+        Customer newCustomer = customerRepo.findById(customerID).get();
+
+        newCustomer.setCustomerName(customer.getCustomerName());
+        newCustomer.setCustomerSurname(customer.getCustomerSurname());
+        newCustomer.setCustomerEmail(customer.getCustomerEmail());
+        newCustomer.setCustomerAddress(customer.getCustomerAddress());
+        newCustomer.setCustomerPhone(customer.getCustomerPhone());
+
+        customerRepo.save(newCustomer);
+
+        return "redirect:/";
+    }
+
     @GetMapping("/findCustomer")
     public String findCustomer(@RequestParam String name, ModelMap modelMap){
 

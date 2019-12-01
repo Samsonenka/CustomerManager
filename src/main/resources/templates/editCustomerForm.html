@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <div class="divForm">
+        <form th:action="@{/updateCustomer/{customerID}(customerID=${customer.customerID})}" method="post">
+            <input type="text" name="customerName" th:value="${customer.customerName}" placeholder="Name">
+            <input type="text" name="customerSurname" th:value="${customer.customerSurname}" placeholder="Surname">
+            <input type="text" name="customerEmail" th:value="${customer.customerEmail}" placeholder="E-mail">
+            <input type="text" name="customerAddress" th:value="${customer.customerAddress}" placeholder="Address">
+            <input type="text" name="customerPhone" th:value="${customer.customerPhone}" placeholder="Phone">
+            <input type="submit" value="Ok">
+        </form>
+    </div>
+</body>
+</html>

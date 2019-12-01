@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        div {
-          height: 150px;
-          width: 200px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-    <div align="center">
+    <div class="divForm">
         <form th:action="@{/postNewCustomer}" method="post">
             <input type="text" name="customerName" placeholder="Name">
             <input type="text" name="customerSurname" placeholder="Surname">

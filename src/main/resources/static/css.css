@@ -1,0 +1,9 @@
+.divForm {
+    margin: auto;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.divForm input{
+    margin-top: 5px;
+}

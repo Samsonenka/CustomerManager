@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-    <div class="divForm">
+    <div class="center">
         <form th:action="@{/updateCustomer/{customerID}(customerID=${customer.customerID})}" method="post">
             <input type="text" name="customerName" th:value="${customer.customerName}" placeholder="Name">
             <input type="text" name="customerSurname" th:value="${customer.customerSurname}" placeholder="Surname">

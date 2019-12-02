@@ -1,9 +1,14 @@
-.divForm {
-    margin: auto;
-    margin-top: 10px;
-    width: 200px;
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
 }
 
-.divForm input{
-    margin-top: 5px;
+input{
+    margin: 2px;
+}
+
+h3{
+    margin-bottom: 0px;
 }
